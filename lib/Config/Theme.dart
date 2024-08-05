@@ -6,38 +6,33 @@ var darkTheme = ThemeData(
   scaffoldBackgroundColor: Color(0xff191B28),
   brightness: Brightness.dark,
   useMaterial3: true,
+  inputDecorationTheme: InputDecorationTheme(
+    fillColor: dBackgroundColor,
+    filled: true,
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+  ),
   colorScheme: const ColorScheme.dark(
-    
     primary: dBackgroundColor,
     secondary: dSecondryColor,
     primaryContainer: dContainerColor,
     onPrimary: dPrimeryTextColor,
     onSecondary: dSecondryTextColor,
   ),
-
-textTheme: TextTheme(
-  headlineLarge: TextStyle(
-    fontSize: 32,
-    color: dPrimeryTextColor,
-    fontFamily: "Poppins",
-    fontWeight: FontWeight.w700
-
+  textTheme: TextTheme(
+    headlineLarge: TextStyle(
+        fontSize: 32,
+        color: dPrimeryTextColor,
+        fontFamily: "Poppins",
+        fontWeight: FontWeight.w700),
+    headlineMedium: TextStyle(
+        fontSize: 20,
+        color: dPrimeryTextColor,
+        fontFamily: "Poppins",
+        fontWeight: FontWeight.w500),
+    headlineSmall: TextStyle(
+        fontSize: 18,
+        color: dPrimeryTextColor,
+        fontFamily: "Poppins",
+        fontWeight: FontWeight.w400),
   ),
-  headlineMedium: TextStyle(
-    fontSize:20,
-    color: dPrimeryTextColor,
-    fontFamily: "Poppins",
-    fontWeight: FontWeight.w500
-
-  ),
-  headlineSmall: TextStyle(
-    fontSize:18,
-    color: dPrimeryTextColor,
-    fontFamily: "Poppins",
-    fontWeight: FontWeight.w400
-
-  ),
-),
-
-
 );

@@ -1,3 +1,5 @@
+import 'package:chat_vibe/Pages/Auth/LoginForm.dart';
+import 'package:chat_vibe/Pages/Auth/SignupForm.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -62,7 +64,9 @@ class Authpage extends StatelessWidget {
                                   ?.copyWith(
                                     color: isLogin.value
                                         ? Colors.white
-                                        : Colors.grey,
+                                        : Theme.of(context)
+                                            .colorScheme
+                                            .primaryContainer,
                                   ),
                             ),
                           ),
@@ -92,7 +96,9 @@ class Authpage extends StatelessWidget {
                                   .headlineMedium
                                   ?.copyWith(
                                     color: isLogin.value
-                                        ? Colors.grey
+                                        ? Theme.of(context)
+                                            .colorScheme
+                                            .primaryContainer
                                         : Colors.white,
                                   ),
                             ),
@@ -105,16 +111,14 @@ class Authpage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 15),
-            Container(
-              height: 400,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Theme.of(context).colorScheme.secondary,
-              ),
-              child: Row(
-                children: [],
-              ),
-            )
+            Obx(() => Container(
+                  // height: 400,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
+                  child: isLogin.value ? LoginForm() : SignupForm(),
+                )),
           ],
         ),
       ),
